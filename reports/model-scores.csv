@@ -1,0 +1,7 @@
+Model,Accuracy,F1
+Gaussian Naive-Bayes,0.5956,0.5956
+Logistic Regression,0.9456,0.9456
+Random Forest,0.9404,0.9404
+Decision Tree,0.944,0.944
+SVM,0.946,0.946
+kNN,0.9424,0.9424

@@ -10,6 +10,8 @@ from sklearn.neighbors import KNeighborsClassifier
 
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import f1_score
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
 
 
 class BinaryClassifier(object):
@@ -30,7 +32,7 @@ class BinaryClassifier(object):
         self.classifier.fit(self.x_train, self.y_train)
         predictions = self.classifier.predict(self.x_test)
         a = accuracy_score(self.y_test, predictions)
-        f = f1_score(self.y_test, predictions, average='micro')
+        f = f1_score(self.y_test, predictions, average='macro')
         return a, f
 
     def apply_logistic_regression(self):
@@ -38,7 +40,7 @@ class BinaryClassifier(object):
         self.classifier.fit(self.x_train, self.y_train)
         predictions = self.classifier.predict(self.x_test)
         a = accuracy_score(self.y_test, predictions)
-        f = f1_score(self.y_test, predictions, average='micro')
+        f = f1_score(self.y_test, predictions, average='macro')
         return a, f
 
     def apply_random_forest(self):
@@ -46,7 +48,7 @@ class BinaryClassifier(object):
         self.classifier.fit(self.x_train, self.y_train)
         predictions = self.classifier.predict(self.x_test)
         a = accuracy_score(self.y_test, predictions)
-        f = f1_score(self.y_test, predictions, average='micro')
+        f = f1_score(self.y_test, predictions, average='macro')
         return a, f
 
     def apply_decision_tree(self, max_depth=3):
@@ -54,7 +56,7 @@ class BinaryClassifier(object):
         self.classifier.fit(self.x_train, self.y_train)
         predictions = self.classifier.predict(self.x_test)
         a = accuracy_score(self.y_test, predictions)
-        f = f1_score(self.y_test, predictions, average='micro')
+        f = f1_score(self.y_test, predictions, average='macro')
         return a, f
 
     def apply_svm(self):
@@ -62,7 +64,7 @@ class BinaryClassifier(object):
         self.classifier.fit(self.x_train, self.y_train)
         predictions = self.classifier.predict(self.x_test)
         a = accuracy_score(self.y_test, predictions)
-        f = f1_score(self.y_test, predictions, average='micro')
+        f = f1_score(self.y_test, predictions, average='macro')
         return a, f
 
     def apply_knn(self, k=3):
@@ -70,5 +72,5 @@ class BinaryClassifier(object):
         self.classifier.fit(self.x_train, self.y_train)
         predictions = self.classifier.predict(self.x_test)
         a = accuracy_score(self.y_test, predictions)
-        f = f1_score(self.y_test, predictions, average='micro')
+        f = f1_score(self.y_test, predictions, average='macro')
         return a, f
